@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
         width: 300,
         height: 45,
         borderColor: 'blue',
-        borderWidth: 1,
+        borderWidth: 2,
     }
 })
