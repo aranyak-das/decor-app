@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
-import * as Font from 'expo-font'
+import * as React from "react";
+import { View, Button } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import Login from './screens/login';
-import { AppLoading } from 'expo';
-import Navigator from './routes/homeStack';
+import RoomSelect from './screens/room_select';
 
-const getFonts = () => Font.loadAsync({
-  'montserrat-bold': require('./assets/fonts/Montserrat-Bold.ttf')
-});
+function LoginScreen({ navigation }) {
 
-export default function App() {
-const [fontsLoaded, setFontsLoaded] = useState(false);
+    return(
+        <Login />
 
-  if(fontsLoaded){
-    return (
-      <Navigator />
     );
-  } else {
-    return (
-      <AppLoading 
-        startAsync={getFonts} 
-        onFinish={()=> setFontsLoaded(true)}
-      />
-    )
-  }
 }
+
+function RoomSelectScreen({ navigation }) {
+    return(
+        <RoomSelect />
+    );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login">
+                <Stack.Screen name="Login" component={LoginScreen}/>
+                <Stack.Screen name="RoomSelect" component={RoomSelectScreen}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+export default App;

@@ -1,8 +1,8 @@
-import React from "react";
-import { View, StyleSheet, Text }  from 'react-native';
+import * as React from "react";
+import { View, StyleSheet, Text, Button }  from 'react-native';
 import { Picker } from "@react-native-picker/picker";
 
-export default function App() {
+export default function f2() {
     return(
         <View style = {styles.container}>
             <Text style={styles.welcome}>Choose a Room</Text>
@@ -12,7 +12,13 @@ export default function App() {
                 <Picker.Item label="Kitchen" value="Kitchen"/>
                 <Picker.Item label="Dining Hall" value="Dining Hall"/>
             </Picker>
+
+            <Button
+                title="Next"
+            />
         </View>
+
+        
     )
 }
 
