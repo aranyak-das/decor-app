@@ -15,6 +15,9 @@ export default function f2() {
 
             <Button
                 title="Next"
+                onPress={() => {
+                    navigation.navigate("CameraScreen");
+                }}
             />
         </View>
 

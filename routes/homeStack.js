@@ -2,6 +2,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import { Login } from '../screens/login';
 import { RoomSelect } from '../screens/room_select';
+import { Cam } from '../screens/cam';
 
 const screens = {
     Login: {
@@ -9,6 +10,9 @@ const screens = {
     },
     RoomSelect: {
         screen: RoomSelect
+    },
+    Cam: {
+        screen: Cam
     }
 }
 
